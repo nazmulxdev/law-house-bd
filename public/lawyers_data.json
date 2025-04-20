@@ -1,0 +1,198 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "image": "https://i.ibb.co.com/TxxNgGgZ/360-F-157631844-SCM8u-Fh-Zf1zma-Ms-UTo-Q4nfs0yl-KTKStd.jpg",
+    "expertise": "Family Law",
+    "license_no": "FL-2020-001",
+    "availability_days": [
+      "Monday",
+      "Wednesday",
+      "Friday",
+      "Saturday"
+    ],
+    "years_of_experience": 8,
+    "consultation_fee": 150,
+    "is_available_now": false
+  },
+  {
+    "id": 2,
+    "name": "Brian Lee",
+    "image": "https://i.ibb.co.com/0Vdhj4BD/istockphoto-171096019-612x612.jpg",
+    "expertise": "Criminal Defense",
+    "license_no": "CD-2018-014",
+    "availability_days": [
+      "Tuesday",
+      "Thursday",
+      "Saturday",
+      "Sunday"
+    ],
+    "years_of_experience": 12,
+    "consultation_fee": 200,
+    "is_available_now": false
+  },
+  {
+    "id": 3,
+    "name": "Cynthia Adams",
+    "image": "https://i.ibb.co.com/NnG4T5zX/Emily-Bowly-web-1950.jpg",
+    "expertise": "Corporate Law",
+    "license_no": "CL-2015-022",
+    "availability_days": [
+      "Monday",
+      "Tuesday",
+      "Thursday",
+      "Friday"
+    ],
+    "years_of_experience": 10,
+    "consultation_fee": 250,
+    "is_available_now": false
+  },
+  {
+    "id": 4,
+    "name": "David Smith",
+    "image": "https://i.ibb.co.com/0Pn2CMT/a-male-lawyer-stands-confidently-in-the-courtroom-a-portrait-capturing-his-professionalism-and-dedic.jpg",
+    "expertise": "Immigration Law",
+    "license_no": "IM-2017-011",
+    "availability_days": [
+      "Wednesday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "years_of_experience": 7,
+    "consultation_fee": 180,
+    "is_available_now": false
+  },
+  {
+    "id": 5,
+    "name": "Emily Rogers",
+    "image": "https://i.ibb.co.com/8LFBfkkH/1000-F-331112638-m-N7x9-E5-Uio-M4o-RTnme-Ikct-N0y5l102-Pd.jpg",
+    "expertise": "Intellectual Property",
+    "license_no": "IP-2016-037",
+    "availability_days": [
+      "Monday",
+      "Tuesday",
+      "Thursday",
+      "Friday"
+    ],
+    "years_of_experience": 9,
+    "consultation_fee": 220,
+    "is_available_now": false
+  },
+  {
+    "id": 6,
+    "name": "Franklin Miles",
+    "image": "https://i.ibb.co.com/QvnjDbXh/a-male-lawyer-stands-confidently-in-the-courtroom-a-portrait-capturing-his-professionalism-and-dedic.jpg",
+    "expertise": "Real Estate Law",
+    "license_no": "RE-2014-045",
+    "availability_days": [
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Saturday"
+    ],
+    "years_of_experience": 11,
+    "consultation_fee": 190,
+    "is_available_now": false
+  },
+  {
+    "id": 7,
+    "name": "Grace Bennett",
+    "image": "https://i.ibb.co.com/Kz2czZM1/istockphoto-1587604256-612x612.jpg",
+    "expertise": "Tax Law",
+    "license_no": "TX-2013-008",
+    "availability_days": [
+      "Monday",
+      "Wednesday",
+      "Thursday",
+      "Saturday"
+    ],
+    "years_of_experience": 13,
+    "consultation_fee": 230,
+    "is_available_now": false
+  },
+  {
+    "id": 8,
+    "name": "Henry Walker",
+    "image": "https://i.ibb.co/9m8gydzt/istockphoto-104821116-612x612.jpg",
+    "expertise": "Bankruptcy Law",
+    "license_no": "BK-2019-019",
+    "availability_days": [
+      "Tuesday",
+      "Thursday",
+      "Friday",
+      "Sunday"
+    ],
+    "years_of_experience": 6,
+    "consultation_fee": 170,
+    "is_available_now": false
+  },
+  {
+    "id": 9,
+    "name": "Isabella Cruz",
+    "image": "https://i.ibb.co/GvZjygXL/lovepik-male-lawyer-picture-500984408.jpg",
+    "expertise": "Labor Law",
+    "license_no": "LB-2021-050",
+    "availability_days": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "years_of_experience": 4,
+    "consultation_fee": 160,
+    "is_available_now": false
+  },
+  {
+    "id": 10,
+    "name": "Jack Nolan",
+    "image": "https://i.ibb.co/b5t0BQCX/360-F-103745825-t-UEuhn-N3-Fz-Og-FOe-Wow-SGFgcs-OAh87-POq.jpg",
+    "expertise": "Environmental Law",
+    "license_no": "EN-2012-026",
+    "availability_days": [
+      "Monday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "years_of_experience": 14,
+    "consultation_fee": 210,
+    "is_available_now": false
+  },
+  {
+    "id": 11,
+    "name": "Katherine Wells",
+    "image": "https://i.ibb.co/BDRsJPr/istockphoto-1326920136-612x612.jpg",
+    "expertise": "Health Law",
+    "license_no": "HL-2016-034",
+    "availability_days": [
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Sunday"
+    ],
+    "years_of_experience": 9,
+    "consultation_fee": 200,
+    "is_available_now": false
+  },
+  {
+    "id": 12,
+    "name": "Liam Grant",
+    "image": "https://i.ibb.co/GvqMfmwX/360-F-633618049-d-Nfp-Ot-GMtkxm4p7mc-Oduaf-Xw-KELhuvi9.jpg",
+    "expertise": "Civil Rights Law",
+    "license_no": "CR-2018-029",
+    "availability_days": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "years_of_experience": 5,
+    "consultation_fee": 175,
+    "is_available_now": false
+  }
+]
+
+
+
