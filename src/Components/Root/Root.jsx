@@ -1,6 +1,7 @@
 import React from "react";
 import { RingLoader } from "react-spinners";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 const Root = () => {
   return (
@@ -11,6 +12,7 @@ const Root = () => {
       </RingLoader> */}
 
       <NavBar></NavBar>
+      <Footer></Footer>
     </div>
   );
 };
