@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import SingleLawyer from "../SingleLawyer/SingleLawyer";
 
-const BestLawyer = ({ allLawyers }) => {
-  // const allLawyersData=allLawyers;
-  //   console.log(allLawyersData);
+const allLawyersArray = fetch("lawyers_data.json").then((res) => res.json());
 
+const BestLawyer = () => {
+  const arrayOfAllLawyers = use(allLawyersArray);
   const [displayAllLawyers, setAllLawyers] = useState([]);
   const [showAllLawyers, setShowAllLawyers] = useState(false);
   useEffect(() => {
     if (showAllLawyers) {
-      setAllLawyers(allLawyers);
+      setAllLawyers(arrayOfAllLawyers);
     } else {
-      setAllLawyers(allLawyers.slice(0, 6));
+      setAllLawyers(arrayOfAllLawyers.slice(0, 6));
     }
-  }, [allLawyers, showAllLawyers]);
+  }, [arrayOfAllLawyers, showAllLawyers]);
 
   return (
     <div className="max-w-screen-2xl mx-auto p-8 text-center">
@@ -28,12 +28,13 @@ const BestLawyer = ({ allLawyers }) => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {displayAllLawyers.map((singleLawyerData) => (
-          <SingleLawyer
-            key={singleLawyerData.id}
-            singleLawyerData={singleLawyerData}
-          ></SingleLawyer>
-        ))}
+        {Array.isArray(displayAllLawyers) &&
+          displayAllLawyers.map((singleLawyerData) => (
+            <SingleLawyer
+              key={singleLawyerData.id}
+              singleLawyerData={singleLawyerData}
+            ></SingleLawyer>
+          ))}
       </div>
       <button
         onClick={() => {

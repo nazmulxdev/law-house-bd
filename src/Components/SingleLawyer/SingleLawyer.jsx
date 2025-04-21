@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const SingleLawyer = ({ singleLawyerData }) => {
   const { name, image, expertise, license_no, years_of_experience } =
@@ -32,11 +32,11 @@ const SingleLawyer = ({ singleLawyerData }) => {
         <p className="font-medium text-lg text-[#0F0F0F70] ">
           ® License No: {license_no}
         </p>
-        <Link to={`/lawyer/${license_no}`}>
+        <NavLink to={`/lawyer/${license_no}`}>
           <button className="btn bg-white border-2 border-[#176AE520] rounded-full w-full text-[#176AE5] font-bold text-base mt-4 hover:text-white hover:bg-[#176AE5]">
             View Details
           </button>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

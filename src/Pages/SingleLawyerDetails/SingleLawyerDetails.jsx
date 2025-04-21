@@ -18,8 +18,6 @@ const SingleLawyerDetails = ({ params }) => {
     years_of_experience,
     consultation_fee,
   } = lawyerDetail;
-  console.log(lawyerDetail);
-  console.log(license_no);
   return (
     <div>
       <div className="max-w-screen-2xl mx-auto p-16 rounded-2xl bg-[#0F0F0F0D] mb-8 text-center">
