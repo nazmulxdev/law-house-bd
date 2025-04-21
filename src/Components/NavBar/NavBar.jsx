@@ -29,7 +29,7 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li className="text-lg font-medium text-[#0F0F0F90]">
-              <NavLink to="/home">Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li className="text-lg font-medium text-[#0F0F0F90]">
               <NavLink to="/my-booking">My-Bookings</NavLink>
@@ -52,7 +52,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 mulish">
           <li className="text-lg font-medium text-[#0F0F0F90]">
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li className="text-lg font-medium text-[#0F0F0F90]">
             <NavLink to="/my-booking">My-Bookings</NavLink>

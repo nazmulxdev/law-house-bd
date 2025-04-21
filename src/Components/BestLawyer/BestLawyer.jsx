@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SingleLawyer from "../SingleLawyer/SingleLawyer";
 
 const BestLawyer = ({ allLawyers }) => {
   // const allLawyersData=allLawyers;
   //   console.log(allLawyersData);
+
+  const [displayAllLawyers, setAllLawyers] = useState([]);
+  const [showAllLawyers, setShowAllLawyers] = useState(false);
+  useEffect(() => {
+    if (showAllLawyers) {
+      setAllLawyers(allLawyers);
+    } else {
+      setAllLawyers(allLawyers.slice(0, 6));
+    }
+  }, [allLawyers, showAllLawyers]);
 
   return (
     <div className="max-w-screen-2xl mx-auto p-8 text-center">
@@ -18,15 +28,21 @@ const BestLawyer = ({ allLawyers }) => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {allLawyers.map((singleLawyerData) => (
+        {displayAllLawyers.map((singleLawyerData) => (
           <SingleLawyer
             key={singleLawyerData.id}
             singleLawyerData={singleLawyerData}
           ></SingleLawyer>
         ))}
       </div>
-      <button className="btn bg-[#0EA106] text-white font-medium text-xl mulish px-8 py-4 rounded-full mt-8 mb-24 w-56 h-14">
-        Show All Lawyer
+      <button
+        onClick={() => {
+          setShowAllLawyers((previousValue) => !previousValue);
+          if (showAllLawyers) window.scroll(0, 0);
+        }}
+        className="btn bg-[#0EA106] text-white font-medium text-xl mulish px-8 py-4 rounded-full mt-8 mb-24 w-56 h-14"
+      >
+        {showAllLawyers ? "Show Less Lawyer" : "Show All Lawyer"}
       </button>
     </div>
   );

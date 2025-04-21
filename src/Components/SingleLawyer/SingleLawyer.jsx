@@ -7,6 +7,7 @@ const SingleLawyer = ({ singleLawyerData }) => {
   const {
     id,
     name,
+    image,
     expertise,
     consultation_fee,
     license_no,
@@ -17,8 +18,12 @@ const SingleLawyer = ({ singleLawyerData }) => {
       className="border-2 border-[#C4C4C4] rounded-2xl grid grid-cols-3
      items-center p-6 gap-16"
     >
-      <div className="col-span-1 bg-slate-300 rounded-[0.75rem]">
-        <img src={lawyerImage} alt="" />
+      <div className="col-span-1 rounded-[0.75rem]">
+        <img
+          className="w-40 h-40 object-cover rounded-[0.75rem]"
+          src={image}
+          alt=""
+        />
       </div>
       <div className="col-span-2  text-start">
         <div className="flex items-end gap-2 mb-2">

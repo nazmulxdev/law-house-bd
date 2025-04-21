@@ -8,7 +8,7 @@ import { NavLink, Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-black text-white max-w-screen-2xl mx-auto p-8">
+    <footer className="footer footer-horizontal footer-center bg-black text-white mx-auto p-8">
       <aside>
         <div className="flex items-center mt-12">
           <img src={footerImage} alt="" />{" "}

@@ -12,7 +12,7 @@ const Router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/home",
+        path: "/",
         Component: Home,
         loader: () => fetch("lawyers_data.json"),
       },
