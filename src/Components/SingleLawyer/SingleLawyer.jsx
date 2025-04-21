@@ -1,18 +1,11 @@
 import React from "react";
-import lawyerImage from "../../assets/C002-assets/lawyer.png";
+import { Link } from "react-router";
 
 const SingleLawyer = ({ singleLawyerData }) => {
   console.log(singleLawyerData);
 
-  const {
-    id,
-    name,
-    image,
-    expertise,
-    consultation_fee,
-    license_no,
-    years_of_experience,
-  } = singleLawyerData;
+  const { name, image, expertise, license_no, years_of_experience } =
+    singleLawyerData;
   return (
     <div
       className="border-2 border-[#C4C4C4] rounded-2xl grid grid-cols-3
@@ -41,9 +34,11 @@ const SingleLawyer = ({ singleLawyerData }) => {
         <p className="font-medium text-lg text-[#0F0F0F70] ">
           ® License No: {license_no}
         </p>
-        <button className="btn bg-white border-2 border-[#176AE520] rounded-full w-full text-[#176AE5] font-bold text-base mt-4">
-          View Details
-        </button>
+        <Link to={`/lawyer/${license_no}`}>
+          <button className="btn bg-white border-2 border-[#176AE520] rounded-full w-full text-[#176AE5] font-bold text-base mt-4 hover:text-white hover:bg-[#176AE5]">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );

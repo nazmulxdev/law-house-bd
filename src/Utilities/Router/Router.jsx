@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../../Components/Root/Root";
 import ErrorElements from "../../Pages/ErrorElements/ErrorElements";
 import Home from "../../Pages/Home/Home";
+import SingleLawyerDetails from "../../Pages/SingleLawyerDetails/SingleLawyerDetails";
 
 const Router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const Router = createBrowserRouter([
         path: "/",
         Component: Home,
         loader: () => fetch("lawyers_data.json"),
+      },
+      {
+        path: "/lawyer/:license_no",
+        Component: SingleLawyerDetails,
       },
     ],
   },
