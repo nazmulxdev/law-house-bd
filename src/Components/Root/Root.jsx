@@ -2,6 +2,7 @@ import React from "react";
 import { RingLoader } from "react-spinners";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import { Outlet } from "react-router";
 
 const Root = () => {
   return (
@@ -12,6 +13,7 @@ const Root = () => {
       </RingLoader> */}
 
       <NavBar></NavBar>
+      <Outlet></Outlet>
       <Footer></Footer>
     </div>
   );

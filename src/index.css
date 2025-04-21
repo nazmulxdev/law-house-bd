@@ -17,3 +17,14 @@ a.active {
 a.pending {
   color: blue;
 }
+
+.heroBackground {
+  background: linear-gradient(
+      180deg,
+      rgba(15, 15, 15, 0) -27.727%,
+      rgba(15, 15, 15, 0.8) 100%
+    ),
+    url("assets/C002-assets/banner-img-1.png");
+
+    background-position: center;
+}
