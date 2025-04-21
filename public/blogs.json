@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What is useState and how does it work in React?",
+    "answer": "useState is a React Hook that allows functional components to manage state. It returns a stateful value and a function to update it. When you call the update function, React re-renders the component with the new state. It's useful for toggling values, storing user input, and managing local component data.",
+    "time": "2025-04-23"
+  },
+  {
+    "question": "What is the purpose of useEffect in React?",
+    "answer": "useEffect is used for handling side effects in React, like data fetching, event listeners, or manipulating the DOM. It runs after the component renders and can be set to trigger on specific state or prop changes using the dependency array. It's like lifecycle methods for functional components.",
+    "time": "2025-04-12"
+  },
+  {
+    "question": "What is a custom hook in React and when should you use one?",
+    "answer": "A custom hook is a reusable function that starts with 'use' and lets you share logic across multiple components. You should use one when you find yourself duplicating logic (like handling forms or API calls). It keeps your code DRY and more maintainable.",
+    "time": "2025-04-07"
+  },
+  {
+    "question": "Difference between controlled and uncontrolled components. Which one is better?",
+    "answer": "Controlled components use React state to manage form inputs, while uncontrolled components use refs and manage their own internal state. Controlled components are better for validation and dynamic forms. They're more predictable and easier to debug in most cases.",
+    "time": "2024-04-02"
+  },
+  {
+    "question": "Tell us something about useFormStatus() in React.",
+    "answer": "useFormStatus() is a hook mainly used in React Server Components (like in Next.js). It tells you the current status of a form (like pending or submitting), so you can disable buttons or show loading indicators during submission. It's helpful for improving UX in server-driven forms.",
+    "time": "2025-01-03"
+  }
+]

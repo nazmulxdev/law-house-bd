@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 
 const SingleLawyer = ({ singleLawyerData }) => {
-  console.log(singleLawyerData);
-
   const { name, image, expertise, license_no, years_of_experience } =
     singleLawyerData;
   return (

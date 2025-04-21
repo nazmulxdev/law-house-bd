@@ -4,6 +4,7 @@ import Root from "../../Components/Root/Root";
 import ErrorElements from "../../Pages/ErrorElements/ErrorElements";
 import Home from "../../Pages/Home/Home";
 import SingleLawyerDetails from "../../Pages/SingleLawyerDetails/SingleLawyerDetails";
+import Blogs from "../../Pages/Blogs/Blogs";
 
 const Router = createBrowserRouter([
   {
@@ -13,13 +14,18 @@ const Router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "/",
         Component: Home,
         loader: () => fetch("lawyers_data.json"),
       },
       {
-        path: "/lawyer/:license_no",
+        path: "lawyer/:license_no",
+        loader: ({ params }) => fetch("lawyers_data.json"),
         Component: SingleLawyerDetails,
+      },
+      {
+        path: "blogs",
+        loader: () => fetch("blogs.json"),
+        Component: Blogs,
       },
     ],
   },
