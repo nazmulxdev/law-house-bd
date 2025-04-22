@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 
-const showSuccess = () => {
-  toast.success("🦄 Wow so easy!", {
+const showSuccess = (lawyerName) => {
+  toast.success(`Appointment scheduled for ${lawyerName} successfully`, {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -14,7 +14,7 @@ const showSuccess = () => {
 };
 
 const showWarning = () => {
-  toast.warn("🦄 Wow so easy!", {
+  toast.warn("Appointment already scheduled for today", {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -25,6 +25,20 @@ const showWarning = () => {
     theme: "light",
   });
 };
+
+const showError = () => {
+  toast.error("Appointment Canceled", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+};
+
 const getStoredLawyer = () => {
   const storedLawyersStr = localStorage.getItem("bookingList");
   if (storedLawyersStr) {
@@ -35,7 +49,7 @@ const getStoredLawyer = () => {
   }
 };
 
-const addToStoredDB = (lawyerLicenseNo) => {
+const addToStoredDB = (lawyerLicenseNo, lawyerName) => {
   const storedLawyersLicenseData = getStoredLawyer();
   if (storedLawyersLicenseData.includes(lawyerLicenseNo)) {
     showWarning();
@@ -44,10 +58,9 @@ const addToStoredDB = (lawyerLicenseNo) => {
     storedLawyersLicenseData.push(lawyerLicenseNo);
     const lawyersData = JSON.stringify(storedLawyersLicenseData);
     localStorage.setItem("bookingList", lawyersData);
-    showSuccess();
-    console.log(storedLawyersLicenseData);
+    showSuccess(lawyerName);
     return true;
   }
 };
 
-export { addToStoredDB };
+export { addToStoredDB, getStoredLawyer };
