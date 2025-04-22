@@ -1,8 +1,9 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 import { PiWarningOctagonDuotone } from "react-icons/pi";
-
+import { addToStoredDB } from "../../Utilities/LocalStorage/localStorage";
 const SingleLawyerDetails = ({ params }) => {
+  const navigateRoute = useNavigate();
   const allLawyersDetails = useLoaderData();
   const { license_no } = useParams(params);
 
@@ -31,6 +32,14 @@ const SingleLawyerDetails = ({ params }) => {
   const today = daysName[new Date().getDay()];
 
   const isAvailableToday = availability_days.includes(today);
+
+  const handleBookLawyers = (lawyerLicense) => {
+    const dataIsAdded = addToStoredDB(lawyerLicense);
+    if (!dataIsAdded) {
+      return;
+    }
+    navigateRoute("/my-booking");
+  };
   return (
     <div>
       <div className="max-w-screen-2xl mx-auto p-16 rounded-2xl bg-[#0F0F0F0D] mb-8 text-center border-2 border-[#C4C4C4]">
@@ -108,7 +117,7 @@ const SingleLawyerDetails = ({ params }) => {
           <p className="text-[#141414] mt-4 text-xl font-semibold mb-2">
             Availability
           </p>
-          <p className="text-[#141414] mt-4 text-xl font-semibold mb-2">
+          <div className="text-[#141414] mt-4 text-xl font-semibold mb-2">
             {isAvailableToday ? (
               <div className="bg-[#09982F10] rounded-full px-4 py-2">
                 <p className="text-[#09982F]">Lawyer Available Today</p>
@@ -118,7 +127,7 @@ const SingleLawyerDetails = ({ params }) => {
                 <p className="text-[#FFA000]">Lawyer not Available Today</p>
               </div>
             )}
-          </p>
+          </div>
         </div>
         <div>
           <div className="bg-[#FFA00033] rounded-full px-4 py-4 flex items-center gap-4 justify-center mt-8 mb-4">
@@ -130,7 +139,12 @@ const SingleLawyerDetails = ({ params }) => {
             </p>
           </div>
           <div className="px-4">
-            <button className="btn bg-[#0EA106] text-white font-medium text-xl mulish px-8 py-8 rounded-full  w-full">
+            <button
+              onClick={() => {
+                handleBookLawyers(license_no);
+              }}
+              className="btn bg-[#0EA106] text-white font-medium text-xl mulish px-8 py-8 rounded-full  w-full"
+            >
               Book Appointment Now
             </button>
           </div>

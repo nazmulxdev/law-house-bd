@@ -5,6 +5,7 @@ import ErrorElements from "../../Pages/ErrorElements/ErrorElements";
 import Home from "../../Pages/Home/Home";
 import SingleLawyerDetails from "../../Pages/SingleLawyerDetails/SingleLawyerDetails";
 import Blogs from "../../Pages/Blogs/Blogs";
+import MyBookings from "../../Pages/MyBookings/MyBookings";
 
 const Router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const Router = createBrowserRouter([
         path: "lawyer/:license_no",
         loader: ({ params }) => fetch("lawyers_data.json"),
         Component: SingleLawyerDetails,
+      },
+      {
+        path: "my-booking",
+        Component: MyBookings,
       },
       {
         path: "blogs",
