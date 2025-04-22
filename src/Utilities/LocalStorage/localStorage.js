@@ -1,3 +1,4 @@
+import { data } from "react-router";
 import { toast } from "react-toastify";
 
 const showSuccess = (lawyerName) => {
@@ -63,4 +64,16 @@ const addToStoredDB = (lawyerLicenseNo, lawyerName) => {
   }
 };
 
-export { addToStoredDB, getStoredLawyer };
+const removeStoredDB = (bookedLicenseNo) => {
+  const storedLocalData = getStoredLawyer();
+  console.log(storedLocalData);
+  console.log(bookedLicenseNo);
+  const filteredStoredData = storedLocalData.filter(
+    (data) => data.license_no !== bookedLicenseNo
+  );
+  const remainingLawyer = JSON.stringify(filteredStoredData);
+  localStorage.setItem("bookingList", remainingLawyer);
+  showError();
+};
+
+export { addToStoredDB, getStoredLawyer, removeStoredDB };

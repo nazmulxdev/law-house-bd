@@ -11,13 +11,11 @@ const MyBookings = () => {
   const [bookedLawyer, setBookedLawyer] = useState([]);
   useEffect(() => {
     const storedLawyersLicenseNo = getStoredLawyer();
-    console.log(typeof storedLawyersLicenseNo[1]);
     const bookedLawyersItems = lawyersMainData.filter((lawyer) =>
       storedLawyersLicenseNo.includes(lawyer.license_no)
     );
     setBookedLawyer(bookedLawyersItems);
   }, []);
-  console.log(lawyersMainData);
   return (
     <div>
       {bookedLawyer.length === 0 ? (

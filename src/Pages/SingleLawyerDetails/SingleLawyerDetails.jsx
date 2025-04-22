@@ -33,8 +33,8 @@ const SingleLawyerDetails = ({ params }) => {
 
   const isAvailableToday = availability_days.includes(today);
 
-  const handleBookLawyers = (lawyerLicense,name) => {
-    const dataIsAdded = addToStoredDB(lawyerLicense,name);
+  const handleBookLawyers = (lawyerLicense, name) => {
+    const dataIsAdded = addToStoredDB(lawyerLicense, name);
     if (!dataIsAdded) {
       return;
     }
@@ -141,7 +141,7 @@ const SingleLawyerDetails = ({ params }) => {
           <div className="px-4">
             <button
               onClick={() => {
-                handleBookLawyers(license_no,name);
+                handleBookLawyers(license_no, name);
               }}
               className="btn bg-[#0EA106] text-white font-medium text-xl mulish px-8 py-8 rounded-full  w-full"
             >
