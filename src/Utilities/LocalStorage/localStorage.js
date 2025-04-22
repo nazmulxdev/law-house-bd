@@ -69,7 +69,7 @@ const removeStoredDB = (bookedLicenseNo) => {
   console.log(storedLocalData);
   console.log(bookedLicenseNo);
   const filteredStoredData = storedLocalData.filter(
-    (data) => data.license_no !== bookedLicenseNo
+    (data) => data !== bookedLicenseNo
   );
   const remainingLawyer = JSON.stringify(filteredStoredData);
   localStorage.setItem("bookingList", remainingLawyer);

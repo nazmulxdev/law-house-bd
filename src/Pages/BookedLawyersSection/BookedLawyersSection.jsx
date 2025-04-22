@@ -1,7 +1,7 @@
 import React from "react";
 import BookedSingleLawyer from "../BookedSingleLawyer/BookedSingleLawyer";
 
-const BookedLawyersSection = ({ bookedLawyer }) => {
+const BookedLawyersSection = ({ bookedLawyer,setBookedLawyer }) => {
   //   console.log(bookedLawyer);
   return (
     <div className=" text-center">
@@ -20,7 +20,7 @@ const BookedLawyersSection = ({ bookedLawyer }) => {
           <BookedSingleLawyer
             key={index}
             lawyerBooked={lawyerBooked}
-          ></BookedSingleLawyer>
+            setBookedLawyer={setBookedLawyer}></BookedSingleLawyer>
         ))}
       </div>
     </div>

@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import NavBar from "../../Components/NavBar/NavBar";
 
 const ErrorElements = () => {
-    return (
-        <div>
-            <p>Error pages</p>
-        </div>
-    );
+  return (
+    <div>
+      <NavBar></NavBar>
+    </div>
+  );
 };
 
 export default ErrorElements;

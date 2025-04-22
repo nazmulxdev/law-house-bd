@@ -21,7 +21,7 @@ const MyBookings = () => {
       {bookedLawyer.length === 0 ? (
         <NotBooked></NotBooked>
       ) : (
-        <BookedItems bookedLawyer={bookedLawyer}></BookedItems>
+        <BookedItems bookedLawyer={bookedLawyer} setBookedLawyer={setBookedLawyer}></BookedItems>
       )}
     </div>
   );
