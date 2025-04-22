@@ -1,5 +1,5 @@
-import React, { use } from "react";
-// import { useLoaderData } from "react-router";
+import React, { use, Suspense } from "react";
+import { RingLoader } from "react-spinners";
 import Blog from "./Blog";
 
 const blogsArray = fetch("blogs.json").then((res) => res.json());
@@ -18,9 +18,20 @@ const Blogs = () => {
       </p>
 
       <div>
-        {blogsData.map((blogAnswer, index) => (
-          <Blog key={index} blogAnswer={blogAnswer}></Blog>
-        ))}
+        <Suspense
+          fallback={
+            <RingLoader
+              color="#0EA106"
+              size={200}
+              speedMultiplier={1}
+              className="mx-auto"
+            ></RingLoader>
+          }
+        >
+          {blogsData.map((blogAnswer, index) => (
+            <Blog key={index} blogAnswer={blogAnswer}></Blog>
+          ))}
+        </Suspense>
       </div>
     </div>
   );

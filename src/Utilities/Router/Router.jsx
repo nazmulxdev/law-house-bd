@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router";
+import { RingLoader } from "react-spinners";
 import Root from "../../Components/Root/Root";
 import ErrorElements from "../../Pages/ErrorElements/ErrorElements";
 import Home from "../../Pages/Home/Home";
@@ -17,22 +18,78 @@ const Router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        Component: Home,
+        element: (
+          <Suspense
+            fallback={
+              <RingLoader
+                color="#0EA106"
+                size={200}
+                speedMultiplier={1}
+                className="mx-auto"
+              ></RingLoader>
+            }
+          >
+            <Home></Home>
+          </Suspense>
+        ),
       },
       {
         path: "lawyer/:license_no",
         loader: ({ params }) => fetch("lawyers_data.json"),
-        Component: SingleLawyerDetails,
-        errorElement: <ErrorId></ErrorId>,
+        element: (
+          <Suspense
+            fallback={
+              <RingLoader
+                color="#0EA106"
+                size={200}
+                speedMultiplier={1}
+                className="mx-auto"
+              ></RingLoader>
+            }
+          >
+            <SingleLawyerDetails></SingleLawyerDetails>
+          </Suspense>
+        ),
       },
       {
         path: "my-booking",
-        Component: MyBookings,
+        element: (
+          <Suspense
+            fallback={
+              <RingLoader
+                color="#0EA106"
+                size={200}
+                speedMultiplier={1}
+                className="mx-auto"
+              ></RingLoader>
+            }
+          >
+            <MyBookings></MyBookings>
+          </Suspense>
+        ),
+        title: "Booked Lawyers |  Lawyers-Appointment",
       },
       {
         path: "blogs",
         loader: () => fetch("blogs.json"),
-        Component: Blogs,
+        element: (
+          <Suspense
+            fallback={
+              <RingLoader
+                color="#0EA106"
+                size={200}
+                speedMultiplier={1}
+                className="mx-auto"
+              ></RingLoader>
+            }
+          >
+            <Blogs></Blogs>
+          </Suspense>
+        ),
+      },
+      {
+        path: "*",
+        element: <ErrorElements></ErrorElements>,
       },
     ],
   },
