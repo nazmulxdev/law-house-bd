@@ -1,13 +1,15 @@
-import React, { use, Suspense } from "react";
+import React, { use, Suspense, useEffect } from "react";
 import { RingLoader } from "react-spinners";
 import Blog from "./Blog";
 
 const blogsArray = fetch("blogs.json").then((res) => res.json());
 
 const Blogs = () => {
-  // const blogDetails = useLoaderData();
   const blogsData = use(blogsArray);
-  // console.log(blogDetails);
+
+  useEffect(() => {
+    document.title = "LawServices | Blogs";
+  }, []);
   return (
     <div className="max-w-screen-2xl mx-auto p-8">
       <h1 className="font-bold text-5xl text-[#0F0F0F]  mb-4 text-center">

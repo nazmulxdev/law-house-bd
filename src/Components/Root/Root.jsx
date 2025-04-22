@@ -1,17 +1,28 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import { ToastContainer } from "react-toastify";
+import { RingLoader } from "react-spinners";
 // import DynamicTitle from "../DaynamicTitle/DaynamicTitle";
 
 const Root = () => {
+  const navigation = useNavigation();
   return (
     <div className="mulish">
       {/* <DynamicTitle></DynamicTitle> */}
       <ToastContainer></ToastContainer>
       <NavBar></NavBar>
-      <Outlet></Outlet>
+      {navigation.state == "loading" ? (
+        <RingLoader
+          color="#0EA106"
+          size={200}
+          speedMultiplier={1}
+          className="mx-auto"
+        ></RingLoader>
+      ) : (
+        <Outlet></Outlet>
+      )}
       <Footer></Footer>
     </div>
   );

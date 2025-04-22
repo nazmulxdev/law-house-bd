@@ -15,13 +15,17 @@ const MyBookings = () => {
       storedLawyersLicenseNo.includes(lawyer.license_no)
     );
     setBookedLawyer(bookedLawyersItems);
+    document.title = "LawServices | My-Bookings";
   }, []);
   return (
     <div>
       {bookedLawyer.length === 0 ? (
         <NotBooked></NotBooked>
       ) : (
-        <BookedItems bookedLawyer={bookedLawyer} setBookedLawyer={setBookedLawyer}></BookedItems>
+        <BookedItems
+          bookedLawyer={bookedLawyer}
+          setBookedLawyer={setBookedLawyer}
+        ></BookedItems>
       )}
     </div>
   );

@@ -1,16 +1,24 @@
-import React from "react";
-import { Link, useLoaderData, useNavigate, useParams } from "react-router";
+import React, { use, useEffect } from "react";
+import { useLocation, useNavigate, useParams } from "react-router";
 import { PiWarningOctagonDuotone } from "react-icons/pi";
 import { addToStoredDB } from "../../Utilities/LocalStorage/localStorage";
+
+const allLawyersDataArray = fetch("lawyers_data.json").then((res) =>
+  res.json()
+);
+
 const SingleLawyerDetails = ({ params }) => {
+  const location = useLocation();
   const navigateRoute = useNavigate();
-  const allLawyersDetails = useLoaderData();
+  const lawyersAllData = use(allLawyersDataArray);
+  // const allLawyersDetails = useLoaderData();
   const { license_no } = useParams(params);
 
-  const lawyerDetail = allLawyersDetails.find(
+  const lawyerDetail = lawyersAllData.find(
     (lawyer) => lawyer.license_no === license_no
   );
-
+  console.log(location);
+  console.log(location.pathname.split("/")[3]);
   const {
     name,
     availability_days,
@@ -40,6 +48,9 @@ const SingleLawyerDetails = ({ params }) => {
     }
     navigateRoute("/my-booking");
   };
+  useEffect(() => {
+    document.title = `LawServices | ${name}`;
+  }, []);
   return (
     <div>
       <div className="max-w-screen-2xl mx-auto p-16 rounded-2xl bg-[#0F0F0F0D] mb-8 text-center border-2 border-[#C4C4C4]">

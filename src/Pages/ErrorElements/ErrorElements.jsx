@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 
 import errorImage from "../../assets/C002-assets/soft-404-errors-and-seo.jpg";
@@ -6,6 +6,9 @@ import { useNavigate } from "react-router";
 
 const ErrorElements = () => {
   const backHome = useNavigate();
+  useEffect(() => {
+    document.title = "404 -Page Not Found";
+  }, []);
   return (
     <div>
       <NavBar></NavBar>

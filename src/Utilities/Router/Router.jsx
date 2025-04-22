@@ -35,7 +35,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "lawyer/:license_no",
-        loader: ({ params }) => fetch("lawyers_data.json"),
+        // loader: () => fetch("lawyers_data.json"),
         element: (
           <Suspense
             fallback={
@@ -50,6 +50,7 @@ const Router = createBrowserRouter([
             <SingleLawyerDetails></SingleLawyerDetails>
           </Suspense>
         ),
+        errorElement: <ErrorId></ErrorId>,
       },
       {
         path: "my-booking",
@@ -88,8 +89,8 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: "*",
-        element: <ErrorElements></ErrorElements>,
+        path: "/not-found",
+        element: ErrorId,
       },
     ],
   },
