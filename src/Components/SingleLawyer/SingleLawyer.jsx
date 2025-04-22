@@ -2,8 +2,27 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 
 const SingleLawyer = ({ singleLawyerData }) => {
-  const { name, image, expertise, license_no, years_of_experience } =
-    singleLawyerData;
+  const {
+    name,
+    image,
+    expertise,
+    license_no,
+    years_of_experience,
+    availability_days,
+  } = singleLawyerData;
+
+  const daysName = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const presentDay = daysName[new Date().getDay()];
+
+  const isActive = availability_days.includes(presentDay);
   return (
     <div
       className="border-2 border-[#C4C4C4] rounded-2xl grid grid-cols-3
@@ -18,8 +37,16 @@ const SingleLawyer = ({ singleLawyerData }) => {
       </div>
       <div className="col-span-2  text-start">
         <div className="flex items-end gap-2 mb-2">
-          <div className="bg-[#09982F10] rounded-full px-4 py-2">
-            <p className="text-[#09982F]">Available</p>
+          <div>
+            {isActive ? (
+              <div className="bg-[#09982F10] rounded-full px-4 py-2">
+                <p className="text-[#09982F]">Available</p>
+              </div>
+            ) : (
+              <div className="bg-[#FFA00033] rounded-full px-4 py-2">
+                <p className="text-[#FFA000]">Not Available</p>
+              </div>
+            )}
           </div>
           <div className="bg-[#176AE510] rounded-full px-4 py-2">
             <p className="text-[#176AE5]">
@@ -27,6 +54,7 @@ const SingleLawyer = ({ singleLawyerData }) => {
             </p>
           </div>
         </div>
+
         <h1 className="font-bold text-2xl text-[#0F0F0F] ">{name}</h1>
         <p className="font-medium text-lg text-[#0F0F0F70] ">{expertise}</p>
         <p className="font-medium text-lg text-[#0F0F0F70] ">
