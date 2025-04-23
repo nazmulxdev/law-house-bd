@@ -2,7 +2,6 @@ import React from "react";
 import BookedSingleLawyer from "../BookedSingleLawyer/BookedSingleLawyer";
 
 const BookedLawyersSection = ({ bookedLawyer,setBookedLawyer }) => {
-  //   console.log(bookedLawyer);
   return (
     <div className=" text-center">
       <div>

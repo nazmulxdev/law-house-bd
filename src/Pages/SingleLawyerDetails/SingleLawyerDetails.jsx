@@ -1,24 +1,21 @@
 import React, { use, useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { PiWarningOctagonDuotone } from "react-icons/pi";
 import { addToStoredDB } from "../../Utilities/LocalStorage/localStorage";
-
-const allLawyersDataArray = fetch("lawyers_data.json").then((res) =>
+const allLawyersDataArray = fetch("/lawyers_data.json").then((res) =>
   res.json()
 );
 
-const SingleLawyerDetails = ({ params }) => {
-  const location = useLocation();
+const SingleLawyerDetails = () => {
   const navigateRoute = useNavigate();
   const lawyersAllData = use(allLawyersDataArray);
-  // const allLawyersDetails = useLoaderData();
-  const { license_no } = useParams(params);
-
+  const { license_no } = useParams();
+  console.log(license_no.length);
   const lawyerDetail = lawyersAllData.find(
     (lawyer) => lawyer.license_no === license_no
   );
-  console.log(location);
-  console.log(location.pathname.split("/")[3]);
+  console.log(license_no);
+  console.log(lawyerDetail);
   const {
     name,
     availability_days,
@@ -26,7 +23,7 @@ const SingleLawyerDetails = ({ params }) => {
     expertise,
     years_of_experience,
     consultation_fee,
-  } = lawyerDetail;
+  } = lawyerDetail || {};
 
   const daysName = [
     "Sunday",
@@ -49,8 +46,10 @@ const SingleLawyerDetails = ({ params }) => {
     navigateRoute("/my-booking");
   };
   useEffect(() => {
-    document.title = `LawServices | ${name}`;
-  }, []);
+    if (lawyerDetail) {
+      document.title = `LawServices | ${name}`;
+    }
+  }, [lawyerDetail]);
   return (
     <div>
       <div className="max-w-screen-2xl mx-auto p-16 rounded-2xl bg-[#0F0F0F0D] mb-8 text-center border-2 border-[#C4C4C4]">

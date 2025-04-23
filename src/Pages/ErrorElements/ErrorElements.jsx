@@ -9,6 +9,7 @@ const ErrorElements = () => {
   useEffect(() => {
     document.title = "404 -Page Not Found";
   }, []);
+
   return (
     <div>
       <NavBar></NavBar>

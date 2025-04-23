@@ -2,7 +2,7 @@ import React, { use, Suspense, useEffect } from "react";
 import { RingLoader } from "react-spinners";
 import Blog from "./Blog";
 
-const blogsArray = fetch("blogs.json").then((res) => res.json());
+const blogsArray = fetch("/blogs.json").then((res) => res.json());
 
 const Blogs = () => {
   const blogsData = use(blogsArray);

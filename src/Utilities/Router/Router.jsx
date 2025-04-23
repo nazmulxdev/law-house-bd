@@ -34,8 +34,7 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: "lawyer/:license_no",
-        // loader: () => fetch("lawyers_data.json"),
+        path: "/lawyer/:license_no",
         element: (
           <Suspense
             fallback={
@@ -53,7 +52,7 @@ const Router = createBrowserRouter([
         errorElement: <ErrorId></ErrorId>,
       },
       {
-        path: "my-booking",
+        path: "/my-booking",
         element: (
           <Suspense
             fallback={
@@ -68,11 +67,10 @@ const Router = createBrowserRouter([
             <MyBookings></MyBookings>
           </Suspense>
         ),
-        title: "Booked Lawyers |  Lawyers-Appointment",
       },
       {
-        path: "blogs",
-        loader: () => fetch("blogs.json"),
+        path: "/blogs",
+        loader: () => fetch("/blogs.json"),
         element: (
           <Suspense
             fallback={
@@ -87,10 +85,6 @@ const Router = createBrowserRouter([
             <Blogs></Blogs>
           </Suspense>
         ),
-      },
-      {
-        path: "/not-found",
-        element: ErrorId,
       },
     ],
   },

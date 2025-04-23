@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import SingleLawyer from "../SingleLawyer/SingleLawyer";
 
-const allLawyersArray = fetch("lawyers_data.json").then((res) => res.json());
+const allLawyersArray = fetch("/lawyers_data.json").then((res) => res.json());
 
 const BestLawyer = () => {
   const arrayOfAllLawyers = use(allLawyersArray);

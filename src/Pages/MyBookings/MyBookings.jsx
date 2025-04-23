@@ -4,7 +4,7 @@ import BookedItems from "../BookedItems/BookedItems";
 
 import { getStoredLawyer } from "../../Utilities/LocalStorage/localStorage";
 
-const lawyersJsonData = fetch("lawyers_data.json").then((res) => res.json());
+const lawyersJsonData = fetch("/lawyers_data.json").then((res) => res.json());
 
 const MyBookings = () => {
   const lawyersMainData = use(lawyersJsonData);

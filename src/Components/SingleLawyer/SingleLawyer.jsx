@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 
 const SingleLawyer = ({ singleLawyerData }) => {
   const {
@@ -36,7 +36,7 @@ const SingleLawyer = ({ singleLawyerData }) => {
         />
       </div>
       <div className="col-span-2  text-start">
-        <div className="flex items-end gap-2 mb-2">
+        <div className="md:flex items-end gap-2 mb-2">
           <div>
             {isActive ? (
               <div className="bg-[#09982F10] rounded-full px-4 py-2">

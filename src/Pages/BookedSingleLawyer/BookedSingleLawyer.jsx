@@ -4,7 +4,7 @@ import {
   removeStoredDB,
 } from "../../Utilities/LocalStorage/localStorage";
 
-const allLawyersJson = fetch("lawyers_data.json").then((res) => res.json());
+const allLawyersJson = fetch("/lawyers_data.json").then((res) => res.json());
 
 const BookedSingleLawyer = ({ lawyerBooked, setBookedLawyer }) => {
   const lawyersMainData = use(allLawyersJson);
@@ -22,7 +22,7 @@ const BookedSingleLawyer = ({ lawyerBooked, setBookedLawyer }) => {
   };
   return (
     <div>
-      <div className="max-w-screen-2xl mx-auto p-8 rounded-2xl border-2 border-[#462121] mb-8 text-center">
+      <div className="max-w-screen-2xl mx-auto p-8 rounded-2xl border-2 border-[#C4C4C4] mb-8 text-center">
         <div className="border-b-2 border-dashed border-[#C4C4C4] text-lg font-bold text-black pb-4 flex items-center justify-between">
           <div className="text-start">
             <h1 className="font-bold text-xl mb-2">{name}</h1>
@@ -36,7 +36,7 @@ const BookedSingleLawyer = ({ lawyerBooked, setBookedLawyer }) => {
           <div className="px-4 mt-4">
             <button
               onClick={() => handleDeleteLawyer(license_no)}
-              className="btn bg-white border-red-300  text-red-500 font-medium text-xl mulish px-8 py-6 rounded-full  w-full mt-2"
+              className="btn bg-white border-red-300  text-red-500 font-medium text-xl mulish px-8 py-6 rounded-full  w-full mt-2 hover:bg-red-500 hover:text-white"
             >
               Cancel Appointment
             </button>

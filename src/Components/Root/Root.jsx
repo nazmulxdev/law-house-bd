@@ -4,13 +4,11 @@ import Footer from "../Footer/Footer";
 import { Outlet, useNavigation } from "react-router";
 import { ToastContainer } from "react-toastify";
 import { RingLoader } from "react-spinners";
-// import DynamicTitle from "../DaynamicTitle/DaynamicTitle";
 
 const Root = () => {
   const navigation = useNavigation();
   return (
     <div className="mulish">
-      {/* <DynamicTitle></DynamicTitle> */}
       <ToastContainer></ToastContainer>
       <NavBar></NavBar>
       {navigation.state == "loading" ? (
