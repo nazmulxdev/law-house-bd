@@ -66,8 +66,7 @@ const addToStoredDB = (lawyerLicenseNo, lawyerName) => {
 
 const removeStoredDB = (bookedLicenseNo) => {
   const storedLocalData = getStoredLawyer();
-  console.log(storedLocalData);
-  console.log(bookedLicenseNo);
+
   const filteredStoredData = storedLocalData.filter(
     (data) => data !== bookedLicenseNo
   );

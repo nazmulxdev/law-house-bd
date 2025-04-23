@@ -10,12 +10,11 @@ const SingleLawyerDetails = () => {
   const navigateRoute = useNavigate();
   const lawyersAllData = use(allLawyersDataArray);
   const { license_no } = useParams();
-  console.log(license_no.length);
+
   const lawyerDetail = lawyersAllData.find(
     (lawyer) => lawyer.license_no === license_no
   );
-  console.log(license_no);
-  console.log(lawyerDetail);
+
   const {
     name,
     availability_days,
