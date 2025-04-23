@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 const NotBooked = () => {
   const gotoHome = useNavigate();
   return (
-    <div className="max-w-screen-2xl mx-auto p-8 text-center">
+    <div className="max-w-screen-2xl mx-auto p-8 text-center my-10">
       <h1 className="font-bold text-5xl text-[#0F0F0F] text-center  my-8">
         You Have not Booked any Appointment yet
       </h1>
