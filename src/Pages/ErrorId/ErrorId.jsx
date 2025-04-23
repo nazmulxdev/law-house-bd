@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useParams } from "react-router";
 
 const ErrorId = () => {
+  useEffect(() => {
+    document.title = "LawServices | no Data Found";
+  }, []);
   const { license_no } = useParams();
   return (
     <div className="max-w-screen-2xl mx-auto p-8">
