@@ -24,7 +24,7 @@ const Footer = () => {
             <Link to="/my-booking">My-Bookings</Link>
           </li>
           <li className="text-lg font-medium text-white">
-            <Link to="/blogs">Blogs</Link>
+            <Link to="/blogs-page">Blogs</Link>
           </li>
           <li className="text-lg font-medium text-white">
             <Link to="/contact-us">Contact Us</Link>

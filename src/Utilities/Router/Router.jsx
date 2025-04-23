@@ -69,7 +69,7 @@ const Router = createBrowserRouter([
         ),
       },
       {
-        path: "/blogs",
+        path: "/blogs-page",
         loader: () => fetch("/blogs.json"),
         element: (
           <Suspense

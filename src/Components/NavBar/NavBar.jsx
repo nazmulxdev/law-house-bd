@@ -35,7 +35,7 @@ const NavBar = () => {
               <NavLink to="/my-booking">My-Bookings</NavLink>
             </li>
             <li className="text-lg font-medium text-[#0F0F0F90]">
-              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink to="/blogs-page">Blogs</NavLink>
             </li>
             <li className="text-lg font-medium text-[#0F0F0F90]">
               <NavLink to="/contact-us">Contact Us</NavLink>
@@ -58,7 +58,7 @@ const NavBar = () => {
             <NavLink to="/my-booking">My-Bookings</NavLink>
           </li>
           <li className="text-lg font-medium text-[#0F0F0F90]">
-            <NavLink to="/blogs">Blogs</NavLink>
+            <NavLink to="/blogs-page">Blogs</NavLink>
           </li>
           <li className="text-lg font-medium text-[#0F0F0F90]">
             <NavLink to="/contact-us">Contact Us</NavLink>
