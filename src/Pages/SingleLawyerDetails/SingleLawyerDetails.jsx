@@ -93,18 +93,20 @@ const SingleLawyerDetails = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-4 my-4">
-              <div className="text-lg font-semibold text-[#141414B3]">
+            <div className=" md:flex md:items-center gap-4 my-4">
+              <div className="mb-2 md:mb-0 text-lg font-semibold text-[#141414B3]">
                 Availability
               </div>
-              {availability_days.map((day, index) => (
-                <div
-                  key={index}
-                  className="border-2 border-[#FFA00033] rounded-full px-4 py-2 text-[#FFA000] font-medium text-base text-center"
-                >
-                  {day}
-                </div>
-              ))}
+              <div className="flex flex-col md:flex-row gap-2">
+                {availability_days.map((day, index) => (
+                  <div
+                    key={index}
+                    className="border-2 border-[#FFA00033] rounded-full px-4 py-2 text-[#FFA000] font-medium text-base text-center"
+                  >
+                    {day}
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="space-x-4">
               <span className="text-lg font-semibold text-[#141414B3]">
